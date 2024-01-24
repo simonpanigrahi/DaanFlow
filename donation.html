@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Donation Page</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <!-- Font Awesome CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+  <style>
+    body {
+      background-color: #f6f5ee;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      position:relative;
+    }
+
+    .donation-container {
+      width: 300px;
+      padding: 20px;
+      border-radius: 8px;
+      background-color: #fbfafacf; /* White background */
+      margin: auto; /* Center-align the container */
+      border: 2px solid #000000; /* Black border */
+    }
+
+    .donation-container h2 {
+      text-align: center;
+      color: #000000; /* Black color */
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+      
+    }
+
+    .form-control {
+      background-color: transparent; /* Transparent background for input fields */
+      color: #ffffff; /* White text */
+      border: 1px solid #000000; /* Black border */
+    }
+
+    .thank-you-message {
+      text-align: center;
+      color: #000000; /* Black color */
+      font-weight: bold;
+      font-family: 'Arial', sans-serif; /* Change the font family */
+      font-size: 1.5em; /* Increase the font size */
+      display: none;
+      border: 2px solid #000000; /* Black border */
+      padding: 10px; /* Add padding for better visibility */
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); /* Shadow effect */
+    }
+
+    .btn-donate {
+      background-color: #1d0f0fc8; /* Green color */
+      border-color: #ffffff; /* White border */
+      color: #ffffff; /* White text */
+      transition: background-color 0.3s ease; /* Smooth transition */
+    }
+
+    .btn-donate:hover {
+      background-color: #ffffff; /* Darker green color on hover */
+    }
+
+    .gradient-custom-2 {
+      background:  #8cd393;
+      border: 2px solid #351e1e1d; /* Black border */
+      padding: 20px; /* Add padding for better visibility */
+      box-shadow: 0 0 20px rgba(36, 11, 11, 0.566); /* Shadow effect */
+    }
+
+    .gradient-custom-2 h4 {
+      font-size: 2.5em; /* Adjust the font size as needed */
+    }
+
+    .gradient-custom-2 p {
+      font-size: 1.2em; /* Adjust the font size as needed */
+      color: #000000; /* Black color */
+    }
+  </style>
+</head>
+<body>
+  
+  <section class="h-100 gradient-form" style="background-color: #f6f5ee ;">
+    <nav>
+      <li class="btn btn-primary btn-block mb-4" style="background-color: #281919; border: 1px solid #693504; display: flex; justify-content: space-evenly;">
+          <a href="main.html" style="color: #ffffff; text-decoration: none;">Back to Home</a>
+          <a href="login.html" style="color: #ffffff; text-decoration: none;">Register</a>
+      </li>
+     </nav>
+  
+  
+    <div class="container py-5 h-100">
+      <div class="row d-flex justify-content-center align-items-left h-100">
+        <div class="col-xl-10">
+          <div class="card rounded-3 text-black">
+            <div class="row g-0">
+              <div class="col-lg-6">
+                <div class="card-body p-md-5 ml-md-4">
+                  <div class="text-center">
+                    <img src="/public/logo.jpg" style="width: 185px;" alt="logo">
+                    <h4 class="mt-1 mb-5 pb-1">DaanFlow</h4>
+                  </div>
+                  <div class="container donation-container">
+                    <h2>Make a Donation</h2>
+                    <form id="donationForm">
+                      <div class="form-group">
+                        <label for="name">Your Name</label>
+                        <input type="text" class="form-control" id="name" placeholder="Enter your name" required>
+                      </div>
+                      <div class="form-group">
+                        <label for="institution">Institution Name</label>
+                        <input type="text" class="form-control" id="institution" placeholder="Enter institution name" required>
+                      </div>
+                      <div class="form-group">
+                        <label for="amount">Donation Amount ($)</label>
+                        <input type="number" class="form-control" id="amount" placeholder="Enter donation amount" required>
+                      </div>
+                      <button type="submit" class="btn btn-donate btn-block">Donate Now</button>
+                    </form>
+                    <div class="thank-you-message" id="thankYouMessage">
+                      Thank you for your donation!
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-6 d-flex align-items-center gradient-custom-2">
+                <div class="text-black px-3 py-4 p-md-5 mx-md-4">
+                  <h4 class="mb-4">You're Valuable!</h4>
+                  <p class="small mb-0 text-white">Your donation is a beacon of hope, transforming lives with each act of kindness. It's a ripple effect of compassion, bringing joy to those in need. A simple gesture from you creates a profound impact, illuminating a brighter path for others. Your generosity is a lifeline, making a world of difference.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Bootstrap JS, Popper.js, and jQuery -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  <script>
+    document.getElementById('donationForm').addEventListener('submit', function (event) {
+      event.preventDefault();
+      // You can add logic here to handle the form submission (e.g., send data to a server).
+      // For now, we'll just display the thank-you message.
+      document.getElementById('thankYouMessage').style.display = 'block';
+    });
+  </script>
+</body>
+</html>
